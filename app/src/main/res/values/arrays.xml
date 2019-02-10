@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--The get movie settings entries-->
+    <array name="prefs_entries">
+        <item>@string/popular_title</item>
+        <item>@string/rating_title</item>
+        <item>@string/fav_title</item>
+    </array>
+
+    <!--The get movie settings entries values-->
+    <array name="prefs_entries_values">
+        <item>@string/popular_value</item>
+        <item>@string/rating_value</item>
+        <item>@string/fav_value</item>
+    </array>
+
+
+
+</resources>

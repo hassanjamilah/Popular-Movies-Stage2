@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+
+    <ImageView
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_weight="0"
+        android:scaleType="fitXY"
+        app:srcCompat="@drawable/play_icon"
+        android:contentDescription="@string/play_button_description"
+        />
+
+    <ImageView
+        android:id="@+id/trailer_listitem_share_imageview"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:layout_gravity="center_horizontal|end"
+        android:layout_weight="0"
+        app:srcCompat="@drawable/share"
+        android:contentDescription="@string/share_button_description"
+        />
+
+    <TextView
+        android:id="@+id/trailer_listitem_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+
+        android:layout_gravity="center_vertical"
+        android:layout_marginLeft="8dp"
+        android:layout_marginStart="8dp"
+        android:gravity="center"
+
+        android:paddingStart="@dimen/rate_title_topmargin"
+        android:paddingEnd="@dimen/rate_title_topmargin"
+
+        android:textAppearance="@style/TextAppearance.AppCompat.Title" />
+
+</LinearLayout>

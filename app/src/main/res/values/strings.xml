@@ -1,0 +1,41 @@
+<resources>
+    <string name="app_name">Popular Movies</string>
+    <string name="settings_menu_title">Settings</string>
+
+    <!--The popular preference strings-->
+    <string name="popular_title">Popular movies</string>
+    <string name="popular_value">Popular</string>
+
+
+
+    <!--The top rated preference strings-->
+    <string name="rating_title">Top rated movies</string>
+    <string name="rating_value">Top rated</string>
+
+
+    <!--The Sort preference strings-->
+    <string name="sort_prefs_key">sort_key</string>
+    <string name="sort_prefs_title">Sort Order</string>
+
+    <!--The labels strings-->
+    <string name="release_date">Release Date</string>
+    <string name="rating_tv">Rating</string>
+    <string name="error_msg">An error occurred</string>
+    <string name="loading_msg">Loading…</string>
+    <string name="tmp_text">value</string>
+    <string name="movie_image">The movie image</string>
+
+    <!--The image views content description-->
+    <string name="movie_item_description">The movie image</string>
+    <string name="fav_title">Favourites</string>
+    <string name="fav_value">Favourites</string>
+    <string name="percent">/ 10</string>
+    <string name="fav_button_description">Add the movie to favourates</string>
+    <string name="play_button_description">Play the trailer of the movie</string>
+    <string name="share_button_description">Share the trailer of the movie</string>
+    <string name="overview_title">Overview</string>
+    <string name="trailer_title">Trailers</string>
+    <string name="reviews_title">Reviews</string>
+
+
+</resources>
