@@ -76,6 +76,11 @@ public class MainActivity extends AppCompatActivity implements LoaderManager.Loa
         //checking the screen orientation if landscape
         //make the grid has three cols
         //else has two cols
+
+
+        SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(this);
+        prefs.registerOnSharedPreferenceChangeListener(this);
+        readPrefs();
         GridLayoutManager manager;
         if (getResources().getConfiguration().orientation == Configuration.ORIENTATION_LANDSCAPE) {
             manager = new GridLayoutManager(this, 3);
@@ -87,32 +92,32 @@ public class MainActivity extends AppCompatActivity implements LoaderManager.Loa
         movie_RecyclerView.setAdapter(adapter);
         movie_RecyclerView.setHasFixedSize(true);
         //reading the preferences and register the preference listener
-        SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(this);
-        prefs.registerOnSharedPreferenceChangeListener(this);
-        readPrefs();
-        //reading the movies data
-        try {
-            if (sortMovies.equals(getString(R.string.popular_value))) {
-                doWork(NetworkUtils.ORDER_BY_POPULAR_URL);
-            } else if (sortMovies.equals(getString(R.string.fav_value))) {
-                doWork(NetworkUtils.ORDER_BY_FAVOURITES);
-            } else {
-                doWork(NetworkUtils.ORDER_BY_RATING_URL);
-            }
-        } catch (MalformedURLException e) {
-            e.printStackTrace();
-            Log.e("hassan" , e.getMessage());
-            showErrorMsg(getString(R.string.error_msg));
-        } catch (IOException e) {
-            e.printStackTrace();
-            Log.e("hassan" , e.getMessage());
-            showErrorMsg(getString(R.string.error_msg));
-        }
+
+
         //reading the data after the instance changed
         if (savedInstanceState == null || !savedInstanceState.containsKey(BUNDLE_KEY)) {
             movies = new ArrayList<>();
+            //reading the movies data
+            try {
+                if (sortMovies.equals(getString(R.string.popular_value))) {
+                    doWork(NetworkUtils.ORDER_BY_POPULAR_URL);
+                } else if (sortMovies.equals(getString(R.string.fav_value))) {
+                    doWork(NetworkUtils.ORDER_BY_FAVOURITES);
+                } else {
+                    doWork(NetworkUtils.ORDER_BY_RATING_URL);
+                }
+            } catch (MalformedURLException e) {
+                e.printStackTrace();
+                Log.e("hassan" , e.getMessage());
+                showErrorMsg(getString(R.string.error_msg));
+            } catch (IOException e) {
+                e.printStackTrace();
+
+                showErrorMsg(getString(R.string.error_msg));
+            }
         } else {
             movies = savedInstanceState.getParcelableArrayList(BUNDLE_KEY);
+           adapter.setData(movies);
         }
     }
 
